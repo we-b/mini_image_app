@@ -1,5 +1,5 @@
 if (window.location.pathname === '/messages/new') {
-  document.addEventListener('load', function (){
+  document.addEventListener('DOMContentLoaded', function (){
     const ImageList = document.getElementById('image-list')
 
     // 選択した画像を表示する関数

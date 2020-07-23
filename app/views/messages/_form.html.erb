@@ -1,10 +1,10 @@
 <%= form_with model: @message, id: 'new_message', local: true do |f| %>
   <%= f.text_field :content, placeholder: 'type a message' %>
-  <%= f.file_field :images, name: 'message[images][]', data:{index: 0} %>
+  <%= f.file_field :images, name: 'message[images][]' %>
   <%= f.submit '送信' %>
   <div id="image-list">
     <% @message.images.each do |image| %>
-      <%= image_tag images, class: 'images', data:{blob: image.blob.id} %>
+      <%= image_tag images, class: 'images' %>
     <% end %>
   </div>
 <% end %>
