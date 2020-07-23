@@ -2,7 +2,7 @@
   ここをクリックして画像をアップロード
 </label>
 <% @message.images.each do |image| %>
-  <%= image_tag image, class:'images' %>
+  <%= image_tag images, class='images', data:{blob: image.blob.id} %>
 <% end %>
 <%= form_with model: @message, id: 'new_message', local: true do |f| %>
   <%= f.text_field :content, placeholder: 'type a message' %>
