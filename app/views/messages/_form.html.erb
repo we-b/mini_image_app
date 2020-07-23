@@ -1,9 +1,12 @@
 <label for='' id='click-upload'>
   ここをクリックして画像をアップロード
 </label>
-<% @message.images.each do |image| %>
-  <%= image_tag images, class='images', data:{blob: image.blob.id} %>
-<% end %>
+<div id="image-list">
+  <% @message.images.each do |image| %>
+    <%= image_tag images, class: 'images', data:{blob: image.blob.id} %>
+  <% end %>
+</div>
+
 <%= form_with model: @message, id: 'new_message', local: true do |f| %>
   <%= f.text_field :content, placeholder: 'type a message' %>
   <%= f.file_field :images, name: 'message[images][]', data:{index: 0} %>
