@@ -1,3 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-  console.log(123);
+  document.getElementById('message_image').addEventListener('change', function(e){
+    console.log(123);
+  });
 });
