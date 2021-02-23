@@ -5,3 +5,4 @@ document.addEventListener('DOMContentLoaded', function(){
     const file = e.target.files[0];
   });
 }); 
+
