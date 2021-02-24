@@ -5,3 +5,4 @@ class Message < ApplicationRecord
   
 
 end
+
