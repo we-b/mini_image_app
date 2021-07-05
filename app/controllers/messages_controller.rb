@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:edit, :update]
+  before_action :set_message, only: [:edit, :update, :destroy]
 
   def index
     @messages = Message.all
@@ -29,9 +29,17 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy
+    if @message.destroy
+      redirect_to root_path
+    else
+      render :index
+    end
+  end
+
   private
   def message_params
-    params.require(:message).permit(:content, :image)
+    params.require(:message).permit(:content, images: [])
   end
 
   def set_message
