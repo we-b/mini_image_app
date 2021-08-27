@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         createImageHTML(blob)
       })
-    }
+    };
 
     document.getElementById('message_image').addEventListener('change', (e) => {
       const file = e.target.files[0];
